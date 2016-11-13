@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h2 class="page-header"> Recent added movies </h2>
+<table class="table table-striped"> 
+
+<thead> 
+<tr> 
+	<th>#</th> 
+	<th>Name</th> 
+	<th>Year</th> 
+	<th>Description</th> 
+	<th> </th> 
+</tr> 
+</thead> 
+
+<tbody> 
+{% for movie in movies %}
+<tr> 
+	<th scope="row">{{movie.id}}</th> 
+	<td>{{movie.name}}</td> 
+	<td>{{movie.year|date('Y')}}</td> 
+	<td>{{movie.description}}</td> 
+	<td>
+	<a href="/movie/details/{{movie.id}}" class="btn btn-success"> View </a>
+	<a href="/movie/edit/{{movie.id}}" class="btn btn-default"> Edit </a>
+	<a href="/movie/delete/{{movie.id}}" class="btn btn-danger"> Delete </a>
+	</td>
+</tr> 
+
+{% endfor %}
+</tbody> 
+</table>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<a class="btn btn-default" href="/"> Back to Movies </a>
+	<hr>
+	<h2 class="page-header">{{movie.name}} </h2>
+	<ul class="list-group">
+		<li class="list-group-item"> Year: {{movie.year|date('Y')}} </li>
+		<li class="list-group-item"> Description: {{movie.description}} </li>
+	</ul>
+	<h4 class="page-header"> Writer </h4>
+	<ul class="list-group">
+		<li class="list-group-item"> First name: {{writer.firstName}} </li>
+		<li class="list-group-item"> Last Name: {{writer.lastName}} </li>
+		<li class="list-group-item"> Birth date: {{writer.birthDate|date("m/d/Y")}} </li>
+	</ul>
+	<h4 class="page-header"> Director </h4>
+	<ul class="list-group">
+		<li class="list-group-item"> First name: {{director.firstName}} </li>
+		<li class="list-group-item"> Last Name: {{director.lastName}} </li>
+		<li class="list-group-item"> Birth date: {{director.birthDate|date("m/d/Y")}} </li>
+	</ul>
+	<h4 class="page-header"> Main actor </h4>
+	<ul class="list-group">
+		<li class="list-group-item"> First name: {{actor.firstName}} </li>
+		<li class="list-group-item"> Last Name: {{actor.lastName}} </li>
+		<li class="list-group-item"> Birth date: {{actor.birthDate|date("m/d/Y")}} </li>
+	</ul>
+{% endblock %}

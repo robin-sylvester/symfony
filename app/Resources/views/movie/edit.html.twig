@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h2 class="page-header"> Edit movie </h2>
+	{{form_start(form)}}
+	{{ form_row(form.movie, {'label': ' ' }) }}
+	<br>
+	<h4>Role</h4>
+    <ul class="people">
+ 
+        {{ form_row(form.people.0, {'label': 'Writer' }) }} <br>
+         {{ form_row(form.people.1, {'label': 'Director' }) }} <br>
+          {{ form_row(form.people.2, {'label': 'Main Actor' }) }} 
+
+    </ul>
+    <br>
+	{{form_end(form)}}
+{% endblock %}
